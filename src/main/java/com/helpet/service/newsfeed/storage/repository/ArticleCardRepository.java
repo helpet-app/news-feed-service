@@ -42,7 +42,7 @@ public interface ArticleCardRepository extends JpaRepository<ArticleCard, UUID> 
     })
     List<ArticleCard> findAllByIdInOrderByCreatedAtDesc(Collection<UUID> ids);
 
-    default Page<ArticleCard> findAllContentManagerArticlesByFilter(UUID contentManagerId, Collection<UUID> tagIds, Pageable pageable) {
+    default Page<ArticleCard> findAllContentManagerArticlesByFilter(UUID contentManagerId, Set<UUID> tagIds, Pageable pageable) {
         Page<UUID> articleIds = findAllContentManagerArticleIdsByFilter(contentManagerId,
                                                                         Objects.nonNull(tagIds) ? tagIds.toArray(UUID[]::new) : null,
                                                                         PageRequest.of(pageable.getPageNumber(), pageable.getPageSize()));
