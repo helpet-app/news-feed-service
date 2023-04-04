@@ -6,7 +6,7 @@ public enum NotFoundLocalizedError implements DefaultEnumLocalizedError {
     ACCOUNT_DOES_NOT_EXIST,
     CONTENT_MANAGER_DOES_NOT_EXIST,
     ARTICLE_DOES_NOT_EXIST,
-    CONTENT_MANAGER_DOES_NOT_HAVE_THIS_ARTICLE,;
+    CONTENT_MANAGER_DOES_NOT_HAVE_THIS_ARTICLE;
 
     @Override
     public String getErrorKeyPrefix() {
