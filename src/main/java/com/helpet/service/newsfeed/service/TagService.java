@@ -27,7 +27,7 @@ public class TagService {
     }
 
     public List<Tag> getTagsInNames(Set<String> names) {
-        return tagRepository.findAllByNameInIgnoreCase(names);
+        return tagRepository.findAllByNameIn(names);
     }
 
     public Tag createTagIfNeeded(CreateTagRequest tagInfo) {
@@ -46,7 +46,7 @@ public class TagService {
 
     public List<Tag> createTagsIfNeeded(Set<CreateTagRequest> tagsInfo) {
         Set<String> tagNames = tagsInfo.stream().map(CreateTagRequest::getName).collect(Collectors.toSet());
-        List<Tag> tags = tagRepository.findAllByNameInIgnoreCase(tagNames);
+        List<Tag> tags = tagRepository.findAllByNameIn(tagNames);
         for (Tag tag : tags) {
             tagNames.removeIf(tagName -> tagName.equalsIgnoreCase(tag.getName()));
         }

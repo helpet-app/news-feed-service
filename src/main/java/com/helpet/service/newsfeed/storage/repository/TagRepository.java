@@ -15,7 +15,7 @@ import java.util.UUID;
 public interface TagRepository extends JpaRepository<Tag, UUID> {
     Page<Tag> findAllByNameContainingIgnoreCaseOrderByName(String searchName, Pageable pageable);
 
-    List<Tag> findAllByNameInIgnoreCase(Collection<String> names);
+    List<Tag> findAllByNameIn(Collection<String> names);
 
     Optional<Tag> findTagByNameIgnoreCase(String name);
 }
