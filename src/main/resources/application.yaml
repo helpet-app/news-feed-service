@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: news-feed-service
+  profiles:
+    active:
+      - eureka-client
+      - microservice
+      - jpa
+      - docs
+  cloud:
+    config:
+      fail-fast: true
+      retry:
+        max-attempts: 20
+        max-interval: 15000
+        initial-interval: 10000
+      username: ${CONFIG_SERVER_USERNAME}
+      password: ${CONFIG_SERVER_PASSWORD}
+  config:
+    import: optional:configserver:${CONFIG_URI}
