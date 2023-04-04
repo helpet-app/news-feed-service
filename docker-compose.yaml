@@ -17,7 +17,14 @@ services:
       - .news-feed-service.env
     depends_on:
       - news-feed-service-database
+    networks:
+      - helpet-network
+    restart: always
 
 volumes:
   news-feed-service-database-data:
     driver: local
+
+networks:
+  helpet-network:
+    external: true
