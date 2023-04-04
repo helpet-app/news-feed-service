@@ -31,7 +31,7 @@ public class TagService {
     }
 
     public Tag createTagIfNeeded(CreateTagRequest tagInfo) {
-        Optional<Tag> tag = tagRepository.findTagByNameIgnoreCase(tagInfo.getName());
+        Optional<Tag> tag = tagRepository.findTagByName(tagInfo.getName());
 
         if (tag.isPresent()) {
             return tag.get();
