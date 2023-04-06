@@ -23,6 +23,7 @@ public class UpdateArticleRequest {
     @NotBlankOrNull(message = "{validations.not-blank-or-null.source-name-cannot-be-blank-or-must-be-null}")
     private String sourceName;
 
+    @NotBlankOrNull(message = "{validations.not-blank-or-null.source-link-cannot-be-blank-or-must-be-null}")
     @URL(message = "{validations.url.source-link-is-invalid}")
     private String sourceLink;
 }
