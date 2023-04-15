@@ -50,7 +50,7 @@ public class ContentManagerProfileController {
         return new ResponseEntity<>(responseBody, HttpStatus.CREATED);
     }
 
-    @PutMapping
+    @PatchMapping
     public ResponseEntity<ResponseBody> updateProfile(@RequestBody @Valid UpdateContentManagerProfileRequest updateContentManagerProfileRequest,
                                                       JwtAuthenticationToken jwtAuthenticationToken) {
         UUID contentManagerId = JwtPayloadExtractor.extractSubject(jwtAuthenticationToken.getToken());
